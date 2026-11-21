@@ -1,0 +1,75 @@
+.xcast-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  border: 0;
+}
+.xcast-btn svg { display: block; }
+
+.xcast-floating {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+  background: rgba(15, 20, 25, 0.75);
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+*:hover > .xcast-floating,
+.xcast-floating:focus-visible { opacity: 1; }
+
+#xcast-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(20px);
+  z-index: 2147483647;
+  max-width: min(90vw, 480px);
+  padding: 10px 16px;
+  border-radius: 8px;
+  background: #1d9bf0;
+  color: #fff;
+  font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+#xcast-toast.xcast-show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+.xcast-menu {
+  position: fixed;
+  z-index: 2147483646;
+  min-width: 220px;
+  max-width: 320px;
+  padding: 4px 0;
+  border-radius: 12px;
+  background: rgba(15, 20, 25, 0.96);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font: 15px/1.3 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+.xcast-menu-head { padding: 10px 16px 6px; font-weight: 700; }
+.xcast-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 10px 16px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.xcast-menu-item:hover,
+.xcast-menu-item:focus-visible { background: rgba(255, 255, 255, 0.1); outline: none; }
+.xcast-menu-item svg { flex: none; }
+.xcast-menu-note { padding: 8px 16px 10px; color: #8b98a5; font-size: 14px; }

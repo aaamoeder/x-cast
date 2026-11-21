@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>x-cast options</title>
+  <style>
+    body { font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 16px; min-width: 320px; color: #0f1419; }
+    section + section { margin-top: 20px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; }
+    select, input { font: inherit; padding: 4px 8px; }
+    input { width: 100%; box-sizing: border-box; }
+    p { color: #536471; margin: 6px 0 0; }
+    .saved { color: #00ba7c; margin-left: 8px; visibility: hidden; }
+  </style>
+</head>
+<body>
+  <section>
+    <label for="seekStep">Seek step on the TV</label>
+    <select id="seekStep">
+      <option value="5">5 seconds</option>
+      <option value="10">10 seconds</option>
+      <option value="15">15 seconds</option>
+      <option value="30">30 seconds</option>
+    </select>
+    <span class="saved" id="savedSeek">Saved</span>
+    <p>Left and right on the remote skip back or forward by this much while the controls are hidden. Applies from the next cast.</p>
+  </section>
+  <section>
+    <label for="tvAddresses">TV address <span class="saved" id="savedAddr">Saved</span></label>
+    <input id="tvAddresses" type="text" placeholder="e.g. 192.168.178.40" spellcheck="false" autocomplete="off">
+    <p>Optional. x-cast searches the usual home networks by itself. If your TV is not found, open the x-cast app on the TV: it shows its address. Separate several TVs with a comma.</p>
+  </section>
+  <script src="options.js"></script>
+</body>
+</html>
